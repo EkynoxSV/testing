@@ -16,10 +16,11 @@ comprendre le comportement attendu des constructeurs. Utilisez des assertions po
     ...
 
 > Q.1b Le test de ces constructeurs utilisent les opérations getX et getY. Ne trouvez-vous pas cela étrange qu’un test utilise d’autres opérations ? Que faire ?
-> A.1b Sachant que les attributs de la classe MyPoint sont privés, il n'y as pas d'autre choix que d'utiliser d'autres opérations. De ce fait il faut tester que les opération retourne bien les valeurs attendues. Possiblement, on peut choisir l'ordre d'exécution des tests afin de s'assurer que l'echec du test de création ne vienne pas d'une erreur d'une autre méthode.
+
+> A.1b **Sachant que les attributs de la classe MyPoint sont privés, il n'y as pas d'autre choix que d'utiliser d'autres opérations. De ce fait il faut tester que les opération retourne bien les valeurs attendues. Possiblement, on peut choisir l'ordre d'exécution des tests afin de s'assurer que l'echec du test de création ne vienne pas d'une erreur d'une autre méthode.**
 
 > Q.1c Testez les accesseurs en lecture et écriture (les opérations get et set). Tout d’abord, testez getX et setX ensemble (car elles sont liées, idem pour y). Ensuite créez d’autres tests pour tester les opérations set avec la valeur Double.NaN (cf. la javadoc de ces opérations).
->
+
 
 > Q.1d Testez le constructeur 3 et l’opération scale. Plusieurs tests (i.e. plusieurs opérations) seront nécessaires pour le constructeur 3. Vous pouvez constater que la plupart des tests nécessitent la création d’un point au début des opérations de test.
 
@@ -30,10 +31,12 @@ comprendre le comportement attendu des constructeurs. Utilisez des assertions po
 ## Couverture de code
 
 > Q.2a Utilisez l’outil de couverture de code fourni dans Eclipse (ou autre IDE) pour identifier les chemins dans le code non couvert par vos tests. Rajoutez quelques tests si besoins (n’y passez pas trop de temps).
-> A.2a Actuellement nous somme à 54,7% de couverture. 
+
+> A.2a **Actuellement nous somme à 54,7% de couverture. En fin de TP nous avons atteint les 79,7% **
 
 > Q.2b Est-ce que votre code est sûr lorsque toutes les instructions sont couvertes par au moins un test ?
-> A.2b Non le code n'est pas forcément sur, par exemple la methode setY() n'est pas sur si l'ont ne test pas le cas du Double.NaN
+
+> A.2b **Non le code n'est pas forcément sur, par exemple la methode setY() n'est pas sur si l'ont ne test pas le cas du Double.NaN**
 
 > Q.2c Ajoutez le test unitaire suivant et exécutez-le. S’il passe, bien joué. Dans tout les cas cela peut certainement vous aidez à répondre à la question précédente.
 
@@ -48,7 +51,9 @@ Cet exercice est une brève introduction au principe du mock.
 L’opération setPoint(Random r1, Random r2) définit les coordonnées d’un point de manière aléatoire (x avec r1, et y avec r2).
 
 > Q.3a Expliquez en quoi il est impossible de tester en l’état cette opération.
-> A.3a Cette fonction utilise deux objets Random que nous ne pouvons pas controler.
+
+> A.3a **Cette fonction utilise deux objets Random que nous ne pouvons pas controler.**
+   
     >> On veut donc utiliser le principe du Mock pour tester cette opération.
 
 > Q.3b Utilisez Easymock ou Mockito pour tester cette opération. 
